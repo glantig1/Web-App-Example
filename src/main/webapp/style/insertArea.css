@@ -1,0 +1,28 @@
+/* Style the HTML table that shows the tabular database data */
+
+.insertArea {
+    background-color: #87795b;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.insertArea tr {
+    background-color: beige;
+    padding: 3rem;
+    margin: 0.5rem;
+}
+
+.insertArea .error {
+    color:maroon; /*#7B241C; */
+}
+
+.insertArea button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    margin-top: 1rem;
+}

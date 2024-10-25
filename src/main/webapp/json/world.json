@@ -1,0 +1,19 @@
+{
+    "dbError": "",
+    "worldList": [
+      {
+        "worldId": "999",
+        "worldName": "Sigma",
+        "worldDescription": "Uranus",
+        "webUserId": "222",
+        "errorMsg":""
+      },
+      {
+        "worldId": "998",
+        "worldName": "Bogos",
+        "worldDescription": "Binted",
+        "webUserId": "111",
+        "errorMsg":""
+      }
+    ]
+  }

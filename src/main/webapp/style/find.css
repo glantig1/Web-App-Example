@@ -1,0 +1,33 @@
+.find {
+    background-color: #87795b;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.find div {
+    background-color: beige;
+    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 3rem; /* centers the div in its container */
+}
+
+.find span { /* these are the prompts before the textboxes */
+    
+    margin-left: 1rem;
+    margin-right: 0.25rem;
+}
+
+.find button {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-left: 1rem;
+}
+
+.find img {
+    width: 20%;
+    border-radius:0.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem #888888;
+}

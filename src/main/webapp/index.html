@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- HTML comments like this... -->
+<html>
+    <script>
+        "use strict";
+    </script>
+<head>
+    <title>Homebrew Fantasy Compendium</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="icons/globe(1).webp">
+
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/blog.css" rel="stylesheet" type="text/css" />
+    <link href="style/clickSort.css" rel="stylesheet" type="text/css" />
+    <link href="style/dropDown.css" rel="stylesheet" type="text/css" />
+    <link href="style/find.css" rel="stylesheet" type="text/css" />
+    <link href="style/home.css" rel="stylesheet" type="text/css" />
+    <link href="style/insertArea.css" rel="stylesheet" type="text/css" />
+    <link href="style/myDropDown.css" rel="stylesheet" type="text/css" />
+    <link href="style/obj.css" rel="stylesheet" type="text/css" />
+    <link href="style/resources.css" rel="stylesheet" type="text/css" />
+    <link href="style/usersComingSoon.css" rel="stylesheet" type="text/css" />
+    <link href="style/worldList.css" rel="stylesheet" type="text/css" />
+    
+    
+
+
+    <!-- You need these two CDNs (Content Delivery Network) to use react, their version numbers must match -->
+    <!-- changed version on 10-20-2022 from 16.3.1 to 18 for react and react-dom -->
+    <script src='https://unpkg.com/react@18/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'></script>
+    <!-- This CDN lets you use JSX (looks like HTML tags in JS) -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <!-- This CDN lets you use React Routing -->
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Put JS reusable first (these are called by CGFs or by the page like the dropDown FW). -->
+    <script src="_JS_reusable/ajax_alt.js"></script>
+    <script src="_JS_reusable/dropDownFW.js"></script>
+    <script src="_JS_reusable/filterObjList.js"></script>
+    <script src="_JS_reusable/jsSort.js"></script>
+    <script src="_JS_reusable/MakeObj.js"></script>
+    <script src="_JS_reusable/MakeWorldList.js"></script>
+    <script src="_JS_reusable/sortOrder.js"></script>
+    
+
+    <!-- JS Content Generating functions (these are called by the router). -->
+    <script src="_JS_CGF/infoContent.js"></script>
+    <script src="_JS_CGF/MakeWorldList_CGF.js"></script>
+    <script src="_JS_CGF/ObjContentNoReact.js"></script>
+    <script src="_JS_CGF/UsersComingSoon.js"></script>
+    
+
+    <!-- React reusable (these are called by CGFs). -->
+    <script type="text/babel" src="_React_reusable/ConvertEle.js"></script>
+    <script type="text/babel" src="_React_reusable/MakeWorldListR.js"></script>
+
+    <!-- React Content Generating functions (these are called by the router) -->
+    <script type="text/babel" src="_React_CGF/AjaxWorld.js"></script>
+    <script type="text/babel" src="_React_CGF/Blog.js"></script>
+    <script type="text/babel" src="_React_CGF/FindLogon.js"></script>
+    <script type="text/babel" src="_React_CGF/FindLogOff.js"></script>
+    <script type="text/babel" src="_React_CGF/FindProfile.js"></script>
+    <script type="text/babel" src="_React_CGF/Home.js"></script>
+    <script type="text/babel" src="_React_CGF/MakeWorldListR_CGF.js"></script>
+    <script type="text/babel" src="_React_CGF/Resources.js"></script>
+    <script type="text/babel" src="_React_CGF/UserInsertOrUpdate.js"></script>
+    <script type="text/babel" src="_React_CGF/UserSearchTable.js"></script>
+    <script type="text/babel" src="_React_CGF/WorldInsertOrUpdate.js"></script>
+    <script type="text/babel" src="_React_CGF/WorldSearchTable.js"></script>
+
+
+    <!-- Any React scripts (which all have JSX) needs script type="text/babel" -->
+
+
+    <script type="text/babel">
+
+        "use strict";
+
+        dropDownFW({
+            dropHeaderClass: "dropHeader",
+            dropContentClass: "dropContent",
+            showClass: "show",
+            hideClass: "hide"
+        });
+
+        const Link = ReactRouterDOM.Link;
+        const Route = ReactRouterDOM.Route;
+
+        const App = () => (
+            <ReactRouterDOM.HashRouter>
+
+                <div id="titleNav">
+                    <div id="title">
+                        Homebrew Fantasy Compendium
+                    </div>
+                    <div id="nav">
+                        <div class="dropDown">
+                            <Link to="/home">Home</Link>
+                        </div>
+                        
+                        <div class="dropDown">
+                            <div class="dropHeader">Search</div>
+                            <div class="dropContent">
+                                <Link to="/users">Users (coming soon, Simple CGF)</Link> <br />
+                                <Link to="/myObj">My Objects (JS Obj Module)</Link> <br />
+                                <a target="_blank" href="docs/DB_proposal.pdf">My DB PDF</a><br />
+                                <Link to="/infoContent">Info</Link><br />
+                                <Link to="/worldListJS">World List (JS)</Link><br />
+                                <Link to="/worldListReact">World List (React)</Link><br />
+                                <Link to="/userSearchable">Search User (from DB)</Link> <br />
+                                <Link to="/worldSearchable">Search World (from DB)</Link> <br />                         
+                            </div>
+                        </div>
+                        
+                        <div class="dropDown">
+                            <div class="dropHeader">Account</div>
+                            <div class="dropContent">
+                                <Link to="/userInsert">Register</Link> <br />
+                                <Link to="/logon">Log In</Link> <br />
+                                <Link to="/logout">Log Out</Link> <br />
+                                <Link to="/profile">Profile</Link> <br />
+                            </div>
+                        </div>
+
+                        <div class="dropDown">
+                            <Link to="/myResources">Resources</Link>
+                        </div>
+
+                        <div class="dropDown">
+                            <Link to="/myBlog">Blog</Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <Route path="/" exact component={Home} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/infoContent" component={() => <ConvertEle ele={infoContent()} />} />
+                    <Route path="/logon" component={FindLogon} />
+                    <Route path="/logout" component={FindLogoff} />
+                    <Route path="/myBlog" component={Blog} />
+                    <Route path="/myObj" component={() => <ConvertEle ele={ObjContentNoReact()} />} />
+                    <Route path="/myResources" component={Resources} />
+                    <Route path="/profile" component={FindProfile} />
+                    <Route path="/users" component={() => <ConvertEle ele={UsersComingSoon()} />} />
+                    <Route path="/usersDb" component={() => AjaxUsers("webUser/getAll")} />
+                    <Route path="/userSearchable" component={UserSearchTable} />
+                    <Route path="/userInsert" component={UserInsertOrUpdate} />
+                    <Route path="/userUpdate/:id" component={UserInsertOrUpdate} />
+                    <Route path="/worldDb" component={() => AjaxWorld("world/getAll")} />
+                    <Route path="/worldInsert" component={WorldInsertOrUpdate} />
+                    <Route path="/worldListJS" component={() => <ConvertEle ele={MakeWorldList_CGF()} />} />
+                    <Route path="/worldListReact" component= {MakeWorldListR_CGF} />
+                    <Route path="/worldSearchable" component={WorldSearchTable} />
+                    <Route path="/worldUpdate/:id" component={WorldInsertOrUpdate} />
+                    
+                </div>
+
+                <div id="footer">
+                    Gabriel Lantigua
+                </div>
+
+            </ReactRouterDOM.HashRouter>
+        );
+        ReactDOM.render(<App />, document.getElementById('root'));
+        ReactDOM.render(<MakeWorldListR_CGF />, document.getElementById('worldList'));
+    </script>
+</body>
+</html>

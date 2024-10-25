@@ -1,0 +1,14 @@
+.home {
+    text-align:center;
+}
+.home li {
+    text-align:left;
+}
+.home ul {
+    text-align:left;
+}
+.home img{
+    height: 70%;
+    width: 70%;
+    align-items: center;
+}

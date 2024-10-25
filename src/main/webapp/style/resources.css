@@ -1,0 +1,21 @@
+.resources { 
+    padding-top: 0.01rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    background-color: #87795b;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: left;
+    
+}
+.resources h2 { /* style of td elements that are inside of a thead element */
+    text-align: center;
+    
+}
+.resources p { /* style of td elements that are inside of a thead element */
+    padding: 2rem;
+    background-color: beige;
+    
+}

@@ -1,0 +1,21 @@
+.worldList {
+    background-color: #87795b;
+    border-radius: 0.5rem;
+    padding:0.5rem;
+    margin:0.5rem;
+}
+.worldList h2 {
+    margin:0rem;
+}
+.worldList .world {
+    background-color: beige;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+.worldList .world p {
+    margin-top: 0rem;
+}
+.worldList .world button { 
+    background-color:lightblue;
+}

@@ -1,0 +1,13 @@
+.blog {
+    text-align:center;
+}
+.blog li {
+    text-align:left;
+}
+.blog ul {
+    text-align:left;
+}
+.blog img{
+    width: 20%;
+    align-items: center;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Use this type of comment within HTML -->
+        <title>[Homebrew Fantasy Compendium]</title>
+
+        <!-- this is your internal style sheet -->
+        <style> 
+
+            /*  You can only use the "slash star ... star slash" style comment inside a style sheet */
+           
+            html, body {   /* Prevents tiny white border inside browser window. */
+                margin:0rem; 
+                padding:0rem; 
+            }
+
+            body { 
+                list-style-position: inside;
+                text-align:center;
+                
+                background-color: #74B95E; /* red, green, blue (255 is max)
+                                                         this is the turqoise color */
+                color: black;  /* color of font */
+                font-family: sans-serif; /* "no tail" font is more readable for small font */
+            }
+            li {
+                text-align:left;
+            }
+            ul {
+                text-align:left;
+            }
+
+            #titleNav { /* titleNav is fixed, always at the top */
+
+                /* position fixed removes the element from the normal flow, 
+                   placing it w.r.t. the browser's edge as specified by top/bottom, left/right */
+                position:fixed;
+                text-align:center; 
+                top:0rem;
+                left:0rem;
+                z-index: 1;     /* To make sure titleNav is on top of content, 
+                                   give it a higher z-index than content 
+                                   (which has the default value, zero). */
+                width: 100%;    /* fixed elements are not 100% by default like other divs would be */
+
+                font-family: serif; 
+                letter-spacing: 0.1rem; /* spaces out letters a bit */
+                color: white;   /* font color */
+                background-color:#5FA6DC;  
+                padding:0.5rem;
+            }
+
+            #pageTitle { 
+                font-size:3rem;
+            }
+
+            #nav { 
+                
+                text-align:center;
+                font-size:1rem;
+                font-weight:bold;
+            }
+
+            #nav a {  /* this selector applies to links within #nav */
+                
+                text-decoration:none;  /* Do not want links in "nav" to be underlined */
+                color: #C8C8C8; /* light gray: to specify color for links, you have to style the "a" tag */
+            }
+
+            #content {  /* Add padding top to prevent titleNav from covering up top of content. 
+                           add padding bottom to prevent bottom content from getting hidden under footer. */ 
+                padding:1rem;
+                padding-top: 6rem; /* prevent the top of the content from getting hidden under the fixed titleNav */
+                padding-bottom: 2rem; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+            }
+            
+            #content img { /* this selector applies to images within #content */
+                width: 40%;
+                border-radius: 0.5rem;
+                box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+            }
+                    
+            #footer { /* footer fixed, always at the bottom left */
+                position: fixed;
+                bottom: 0rem; 
+                left: 0rem; 
+                z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+
+                background-color:#5FA6DC;
+                color: white; 
+                width:100%; /* fixed elements are not 100% by default like other divs would be */
+                text-align:center;
+                padding:0.5rem;	 	 
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="titleNav">
+
+            <div id="pageTitle">
+                Homebrew Fantasy Compendium
+            </div>
+
+            <div id="nav">
+                <a href="myIndex.html">Home</a>
+                &nbsp; <!-- non breaking space used to give more space -->
+                | <!-- vertical bar used as separator -->
+                &nbsp; <!-- non breaking space used to give more space -->
+                <a href="search.html">Search</a>
+                &nbsp; <!-- non breaking space used to give more space -->
+                |
+                &nbsp; <!-- non breaking space used to give more space -->
+                <a href="userAct.html">User Actions</a>
+                &nbsp; <!-- non breaking space used to give more space -->
+                |
+                &nbsp; <!-- non breaking space used to give more space -->
+                <a href="resources.html">Resources</a>
+                &nbsp; <!-- non breaking space used to give more space -->
+                | <!-- vertical bar used as separator -->
+                &nbsp; <!-- non breaking space used to give more space -->
+                <a href="blog.html">Blog</a>
+                &nbsp; <!-- non breaking space used to give more space -->
+                
+            </div>
+
+        </div>
+
+        <div id="content">
+            <h2>Welcome to the Compendium for Homebrew Fantasy!</h2>
+
+            <p>
+                A one stop site for sharing your world building ideas.
+            </p>
+            <p>
+                The goal of this wbsite is to provide resources to allow the sharing of Fantasy Worlds, highlighting the commonalities and inspirations between them.
+            </p>
+
+            <p style="text-align:center;">
+                <img src="pics/dragon_peaks.jpg" style="width:40%; border-radius:0.5rem;">
+            </p>
+            <h2>Blog</h2>
+            <p><a href="blogExp" target="_blank">Blog</a>
+
+                <h2>Database Table</h2>
+                <p>
+                    The Database table i propose is for users to enter the names of their own Fantasy Worlds as well as their inspirations.
+                    <ul>The following are the database field names:</ul>
+        
+                    <ul>
+                
+                        <li>world_id</li>
+                        <li>world_name</li> 
+                        <li>world_description</li>
+                        <li>world_icon</li>
+                        <li>world_magic_system</li>
+                        <li>world_entered_or_updated</li>
+                        <li>world_user_donation</li>
+                        <li>world_inspiration</li>
+                        <li>world_magic_level_out_of_10</li> 
+                        <li>web_user_id</li>
+                    </ul>
+                    
+                    
+
+                </p>
+    
+            
+                <h2>Database Experience</h2>
+                <p>I had an introductory course on databases before I transfered to Temple, however, this was some time ago and most assignments were simple exercises that I'd likely need a refresher on.</p>
+    
+                <h2>Web Development Experience</h2>
+                <p>Prior to this course I had no web application or development experience. The deepest my knowledge goes is fumbling with inspect element to mess with friends and family.</p>
+    
+                <h2>Homepage Module Feedback</h2>
+                <p>This module seems pretty straight forward, especially after the lab assignment. I did, however, have, and might still be having, some difficulty with the MySQL portion of this HW.</p>
+                <h2>Database Module Feedback</h2>
+                <p>All in all, this module was pretty easy, the only tedium being the recording of the screenshots for the word document. Having some experience with databases in the past, the joining and searching for the fields wasn't an issue. Working within MySQL Workbench isn't alien either with my only issues being clarity in errors as it isn't formatted as well as the rest of the GUI.</p>
+    
+                <p>Click <a href="docs/Database_HW.pdf" target="_blank">here</a> link to see the accompanying Database Document </p>
+
+                <h2> . </h2>
+
+                <h2>Hello World API</h2>
+                <p>
+                    If you would like to see my "Hello World" API open up in a new tab,
+                    click <a href="hello" target="_blank">here</a>.
+                </p>
+            
+            </p>
+        
+            
+
+        </div> <!-- content. [[Keep track of nesting]] -->
+        <div id="footer">
+            Gabriel Lantigua
+        </div>
+    </body>
+</html>
